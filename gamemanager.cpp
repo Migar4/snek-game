@@ -5,20 +5,20 @@ gameManager::gameManager(string name)
 {
     mEngine = new engine(name.c_str());
 
-    mPlayer = new snek("/home/migar/Desktop/C++/snek/assets/head.png");
+    mPlayer = new snek("head.png");
     mBody = new snekBody(*mPlayer);
     //assert(mBody != NULL);
-    mFood = new food("/home/migar/Desktop/C++/snek/assets/food.png");
+    mFood = new food("food.png");
 
-    mStartSprite = new sprite("/home/migar/Desktop/C++/snek/assets/start.jpg", vector3(engine::SCREEN_WIDTH/2, engine::SCREEN_HEIGHT/2));
+    mStartSprite = new sprite("start.jpg", vector3(engine::SCREEN_WIDTH/2, engine::SCREEN_HEIGHT/2));
     mStartSprite->flipVertically();
-    mGameOverSprite = new sprite("/home/migar/Desktop/C++/snek/assets/gameover.jpeg", vector3(engine::SCREEN_WIDTH/2, engine::SCREEN_HEIGHT/2));
+    mGameOverSprite = new sprite("gameover.jpeg", vector3(engine::SCREEN_WIDTH/2, engine::SCREEN_HEIGHT/2));
     mGameOverSprite->flipVertically();
 
-    mBody->createSpr("/home/migar/Desktop/C++/snek/assets/body1.png");
+    mBody->createSpr("body1.png");
 
     for(int i = 0 ; i < 2 ; i++){
-        mBody->createSpr("/home/migar/Desktop/C++/snek/assets/body1.png");
+        mBody->createSpr("body1.png");
     }
 
     mState = state::START;
@@ -81,7 +81,7 @@ void gameManager::start(){
 
 
                 for(int i = 0; i < 2; i++){
-                       mBody->createSpr("/home/migar/Desktop/C++/snek/assets/body1.png");
+                       mBody->createSpr("body1.png");
 
                     }
             }
